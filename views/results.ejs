@@ -7,6 +7,7 @@
     <style>
         body{
             font-family: sans-serif;
+            background-color: #FFFAFA;
         }
         table{
             border-collapse: collapse;
@@ -26,7 +27,8 @@
     </style>
 </head>
 <body>
-    <h2>Results for "<%= queries.query %>" , <%= queries.centre %>, <%= queries.stream %></h2>
+    <h2>Results for "<%= queries.query %>"  in <%= queries.centre %>, <%= queries.stream %></h2>
+    <%if(response.length!=0) { %>
     <table style="width:50%">
         <tr>
           <th>Name</th>
@@ -39,9 +41,12 @@
         </tr>
         <% }) %>
       </table>
-    </br>
-    <h2>Search using roll no. on <a href="https://www.results.shiksha/goa/hssc.htm" target="_blank">results.shiksha</a></h2>
+      <h2>Search using roll no. on <a href="https://www.results.shiksha/goa/hssc.htm" target="_blank">results.shiksha</a></h2>
+
+      <%}else{%>
+        <h3>No results found, if you think this is an error then please make sure to follow the instructions on the home page</h3>
+      <%}%>
     <h4><a href="/">Go back</a></h4>
-    <h3>Developed by <a href="https://linkedin.com/in/sawantkartik" target="_blank">Kartik Sawant</a></h3>
+    <h3>Developed by <a href="https://kartiksawant.github.io" target="_blank">Kartik Sawant</a></h3>
 </body>
 </html>

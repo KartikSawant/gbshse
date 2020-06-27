@@ -7,6 +7,7 @@
     <style>
         body{
             font-family:sans-serif;
+            background-color: #FFFAFA;
         }
         h2, h3,h4{
             text-align: center;
@@ -15,16 +16,33 @@
         form{
             text-align: center;
         }
+        input,select{
+            padding: 7px;
+            margin:10px;
+            font-size: medium;
+        }
+        #submit{
+            background-color: indigo;
+            border: none;
+            color:white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 150px;
+        }
+        #inst{
+            width:50%;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
     <h2>Goa Board HSSC Results</h2>
     <h3>Search by name, centre and stream and get the roll no.</h3>
-    <h3>Enter firstname OR lastname</h3>
+    <h3>Enter either firstname or surname</h3>
     <div>
         <form id="demo" method="GET" action="/search" enctype="application/x-www-form-urlencoded">
-            <input type="text" name="query" placeholder="Name">
-            <select name="centre" id="">
+            <input type="text" name="query" id="query" placeholder="Name">
+            <select name="centre" id="centre">
                 <option value="" disabled selected>Centre</option>
                 <option value="bicholim">Bicholim</option>
                 <option value="canacona">Canacona</option>
@@ -44,17 +62,36 @@
                 <option value="cujira">Cujira</option>
                 <option value="farmagudi">Farmagudi</option>
             </select>
-            <select name="stream" id="">
+            <select name="stream" id="stream">
                 <option value="" disabled selected>Stream</option>
                 <option value="arts">Arts</option>
                 <option value="commerce">Commerce</option>
                 <option value="science">Science</option>
                 <option value="vocational">Vocational</option>
             </select>
-            <input type="submit"></input>
+            </br></br>
+            <input type="submit" id="submit" value="Search" onclick="return empty()"></input>
         </form>
     </div>
-    <h4>Find your centre <a href="/guide">Click here</a></h4>
-    <h3>Developed by <a href="https://linkedin.com/in/sawantkartik" target="_blank">Kartik Sawant</a></h3>
+    <h3>Instructions to use this website</h3>
+    <div id="inst">
+        <p>1. Enter the student's first or last name, if you enter the full name then it wont work.</p>
+        <p>2. Cujira and Panaji are different centres similarly Ponda and Farmagudi are different centres.</p>
+        <p>3. Don't know your centre? <a href="/guide">click here</a></p>
+    </div>
+    <h3>Developed by <a href="https://kartiksawant.github.io" target="_blank">Kartik Sawant</a></h3>
+    <script>
+        function empty() {
+    var x;
+    x = document.getElementById("query").value;
+    y = document.getElementById("centre").value;
+    z = document.getElementById("stream").value;
+    if (x == ""||y == ""||z == "") {
+        alert("Please enter all the details");
+        return false;
+    }
+
+}
+    </script>
 </body>
 </html>
