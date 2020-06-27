@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        table{
+            border-collapse: collapse;
+            margin: auto;
+        }
+        table,th,td{
+            border: 1px solid black;
+            padding:5px
+        }
+        th {
+            text-align: left;
+            height:50px;
+        }
+        h2,h3,h4{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Results for "<%= queries.query %>" , <%= queries.centre %>, <%= queries.stream %></h2>
+    <table style="width:50%">
+        <tr>
+          <th>Name</th>
+          <th>Roll no</th>
+        </tr>
+        <% response.forEach((resp) => { %>
+        <tr>
+          <td><%= resp.name %></td>
+          <td><%= resp.roll %></td>
+        </tr>
+        <% }) %>
+      </table>
+    </br>
+    <h2>Search using roll no. on <a href="https://www.results.shiksha/goa/hssc.htm" target="_blank">results.shiksha</a></h2>
+    <h4><a href="/">Go back</a></h4>
+    <h3>Developed by <a href="https://linkedin.com/in/sawantkartik" target="_blank">Kartik Sawant</a></h3>
+</body>
+</html>

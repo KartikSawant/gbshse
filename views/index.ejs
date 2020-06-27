@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSSC Results</title>
+    <style>
+        body{
+            font-family:sans-serif;
+        }
+        h2, h3,h4{
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        form{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Goa Board HSSC Results</h2>
+    <h3>Search by name, centre and stream and get the roll no.</h3>
+    <h3>Enter firstname OR lastname</h3>
+    <div>
+        <form id="demo" method="GET" action="/search" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="query" placeholder="Name">
+            <select name="centre" id="">
+                <option value="" disabled selected>Centre</option>
+                <option value="bicholim">Bicholim</option>
+                <option value="canacona">Canacona</option>
+                <option value="cuncolim">Cuncolim</option>
+                <option value="curchorem">Curchorem</option>
+                <option value="mapusa">Mapusa</option>
+                <option value="margao">Margao</option>
+                <option value="panaji">Panaji</option>
+                <option value="harmal">Harmal</option>
+                <option value="pernem">Pernem</option>
+                <option value="pilar">Pilar</option>
+                <option value="ponda">Ponda</option>
+                <option value="sanquelim">Sanquelim</option>
+                <option value="vasco">Vasco</option>
+                <option value="navelim">Navelim</option>
+                <option value="porvorim">Porvorim</option>
+                <option value="cujira">Cujira</option>
+                <option value="farmagudi">Farmagudi</option>
+            </select>
+            <select name="stream" id="">
+                <option value="" disabled selected>Stream</option>
+                <option value="arts">Arts</option>
+                <option value="commerce">Commerce</option>
+                <option value="science">Science</option>
+                <option value="vocational">Vocational</option>
+            </select>
+            <input type="submit"></input>
+        </form>
+    </div>
+    <h4>Find you centre <a href="/guide">Click here</a></h4>
+    <h3>Developed by <a href="https://linkedin.com/in/sawantkartik" target="_blank">Kartik Sawant</a></h3>
+</body>
+</html>
